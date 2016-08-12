@@ -35,8 +35,7 @@ public class ClientAsyncTaskImpl extends AsyncTask<String, Void, Response> imple
         return callClient(url, type);
     }
 
-    public
-    Response callClient(final String url, final String type) {
+    public Response callClient(final String url, final String type) {
 
         Response responseModel = new Response();
         String responseJson;
@@ -75,6 +74,7 @@ public class ClientAsyncTaskImpl extends AsyncTask<String, Void, Response> imple
             e.printStackTrace();
             responseJson = e.toString();
             responseModel.setInternetError(true);
+
             listener.onError(e.toString());
         }
 

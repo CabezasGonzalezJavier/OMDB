@@ -3,6 +3,7 @@ package com.thedeveloperworldisyours.omdb;
 import com.thedeveloperworldisyours.omdb.model.Response;
 import com.thedeveloperworldisyours.omdb.requestack.ClientHTTP;
 import com.thedeveloperworldisyours.omdb.requestack.ClientHTTPFactory;
+import com.thedeveloperworldisyours.omdb.utils.Constants;
 import com.thedeveloperworldisyours.omdb.webservice.Request;
 import com.thedeveloperworldisyours.omdb.webservice.RequestImpl;
 import com.thedeveloperworldisyours.omdb.webservice.ResponseHandler;
@@ -25,10 +26,10 @@ public class RequestTest {
 
     @Before
     public void setUp() {
-        mUrl = "someURL";
-        mResponseHandler = mock(ResponseHandler.class);
         mRequest = new RequestImpl();
+        mResponseHandler = mock(ResponseHandler.class);
         mockClientHTTP = mock(ClientHTTP.class);
+        mUrl = Constants.URL;
         ClientHTTPFactory.setMockClientHTTP(mockClientHTTP);
     }
 
@@ -37,4 +38,5 @@ public class RequestTest {
         mRequest.performGetRequest(mUrl, mResponseHandler);
         verify(mockClientHTTP).get(mUrl);
     }
+
 }

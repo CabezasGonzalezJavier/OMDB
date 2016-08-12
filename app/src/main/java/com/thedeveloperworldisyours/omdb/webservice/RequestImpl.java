@@ -1,5 +1,8 @@
 package com.thedeveloperworldisyours.omdb.webservice;
 
+import com.thedeveloperworldisyours.omdb.requestack.ClientHTTP;
+import com.thedeveloperworldisyours.omdb.requestack.ClientHTTPFactory;
+
 /**
  * Created by javierg on 08/08/16.
  */
@@ -8,6 +11,8 @@ public class RequestImpl implements Request{
     public void performGetRequest(String url, ResponseHandler responseHandler) {
 
         ResponseListener responseListener = ResponseFactory.createResponse(responseHandler);
+        ClientHTTP clientHTTP = ClientHTTPFactory.createResponseListener(responseListener);
+        clientHTTP.get(url);
     }
 
     @Override
