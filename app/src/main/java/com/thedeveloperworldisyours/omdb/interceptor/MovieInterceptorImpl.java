@@ -1,5 +1,7 @@
 package com.thedeveloperworldisyours.omdb.interceptor;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.thedeveloperworldisyours.omdb.model.Movie;
 import com.thedeveloperworldisyours.omdb.webservice.CommandFactory;
@@ -11,6 +13,7 @@ import com.thedeveloperworldisyours.omdb.webservice.ResponseHandler;
  */
 public class MovieInterceptorImpl implements MovieInterceptor {
 
+    public static final String TAG = "MovieInterceptorImpl";
     private CommandFactory mCommandFactory = new CommandFactory();
 
     @Override

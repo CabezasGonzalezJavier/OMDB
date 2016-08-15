@@ -1,5 +1,7 @@
 package com.thedeveloperworldisyours.omdb.webservice;
 
+import android.util.Log;
+
 /**
  * Created by javierg on 08/08/16.
  */

@@ -1,5 +1,7 @@
 package com.thedeveloperworldisyours.omdb.requestack;
 
+import android.util.Log;
+
 import com.thedeveloperworldisyours.omdb.webservice.ResponseListener;
 
 /**
@@ -18,6 +20,7 @@ public class ClientHttpImpl implements ClientHTTP {
     @Override
     public void get(String url) {
         this.mAsyncTaskClient = new ClientAsyncTaskImpl();
+        mAsyncTaskClient.executeAsync(mListener,url,"GET");
 
     }
 

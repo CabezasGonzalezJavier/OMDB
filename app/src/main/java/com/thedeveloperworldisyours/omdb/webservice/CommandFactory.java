@@ -6,6 +6,7 @@ package com.thedeveloperworldisyours.omdb.webservice;
 public class CommandFactory {
 
     public static Command createGetCommand(String mUrl, ResponseHandler handler){
+
         Request request = RequestFactory.createResponseListener();
 
         return new GetCommand(mUrl, handler, request);
