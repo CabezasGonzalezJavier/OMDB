@@ -1,7 +1,5 @@
 package com.thedeveloperworldisyours.omdb.presenter;
 
-import android.util.Log;
-
 import com.thedeveloperworldisyours.omdb.interceptor.MovieInterceptor;
 import com.thedeveloperworldisyours.omdb.interceptor.MovieInterceptorImpl;
 import com.thedeveloperworldisyours.omdb.model.Movie;
@@ -23,10 +21,9 @@ public class MainPresenterImpl implements MovieResponseHandler, MainPresenter {
     }
 
     @Override
-    public void handMovie(Movie fuseClient) {
+    public void handMovie(Movie movie) {
         mMainView.onHideProgress();
-        mMainView.onSuccessful();
-
+        mMainView.onSuccessful(movie);
     }
 
     @Override

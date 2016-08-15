@@ -17,12 +17,10 @@ import java.net.URL;
  */
 public class ClientAsyncTaskImpl extends AsyncTask<String, Void, Response> implements ClientAsyncTask {
 
-    private static final String TAG = "ClientAsyncTaskImpl";
     private ResponseListener listener;
 
     @Override
     public void executeAsync(ResponseListener mListener, String url, String type) {
-        Log.d(TAG, "------------> callClient <--------");
         this.listener = mListener;
 
         this.execute(url, type);
@@ -38,7 +36,6 @@ public class ClientAsyncTaskImpl extends AsyncTask<String, Void, Response> imple
     }
 
     public Response callClient(final String url, final String type) {
-        Log.d(TAG, "------------> callClient <--------");
         Response responseModel = new Response();
         String responseJson;
 
